@@ -2,20 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  @apply bg-black text-white font-sans min-h-screen; /* เอา flex justify-center ออก */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ปรับให้ทุก section อยู่กลาง + มี margin และ padding สมดุล */
+@layer utilities {
+  section {
+    @apply container mx-auto px-8 py-16 flex flex-col items-center text-center space-y-12;
+  }
+
+  p {
+    @apply text-lg leading-loose max-w-2xl mx-auto text-gray-400;
+  }
+
+  button {
+    @apply px-8 py-3 text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold text-lg border-2 border-transparent hover:border-blue-500 transition-all duration-300 ease-in-out transform hover:scale-110 hover:rotate-3;
+  }
+
+  /* ปุ่ม Home แบบ fixed ไม่ให้ขยับ */
+  .fixed-home-btn {
+    @apply fixed bottom-6 right-6 px-6 py-3 flex items-center text-white 
+           bg-gradient-to-r from-blue-600 to-purple-600 rounded-full 
+           font-semibold text-lg border-2 border-transparent 
+           hover:border-blue-500 transition-all duration-300 ease-in-out 
+           transform hover:scale-110 shadow-lg;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* ปรับขนาดของหัวข้อหลัก */
+@layer base {
+  h1 {
+    @apply text-8xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text mt-32 z-10;
+    line-height: 1.2; /* เพิ่ม line-height */
+    padding-bottom: 4px; /* เพิ่มระยะห่างด้านล่าง */
+  }
+
+  h2 {
+    @apply text-4xl font-bold bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text mb-8;
+  }
+
+  h3 {
+    @apply text-4xl font-semibold text-gray-300;
+  }
+}
+/* global.css */
+img {
+  object-fit: cover; /* ปรับให้ภาพไม่ยืด */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px; /* ปรับระยะห่างด้านล่าง */
+}
+
+
+/* เพิ่ม hover effect ใน global.css */
+motion.div:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* เพิ่มความสูงให้การแสดงผล */
+* {
+  scroll-behavior: smooth;
+}
+
+/* ปรับให้แน่ใจว่าไม่มีการซ่อนภาพ */
+body, html {
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* กำหนดค่า z-index ให้สูงขึ้นในบาง div */
+section, .motion-div {
+  z-index: 1;
+}
+.motion-div {
+  margin-bottom: 32px; /* ปรับระยะห่างของ motion.div */
+}
+
+.fixed-scroll-btn {
+  @apply fixed right-6 bottom-6 px-6 py-3 flex items-center text-white 
+         bg-gradient-to-r from-blue-600 to-purple-600 rounded-full 
+         font-semibold text-lg border-2 border-transparent 
+         hover:border-blue-500 transition-all duration-300 ease-in-out 
+         transform hover:scale-110 shadow-lg;
+  
+  z-index: 50; /* ทำให้ปุ่มอยู่เหนือ UI อื่นๆ */
+}
+
+.hover-description {
+  position: fixed; /* คงที่เมื่อเลื่อนหน้า */
+  bottom: 5rem; /* ระยะห่างจากด้านล่าง */
+  right: 0; /* อยู่ขวาสุดของหน้าจอ */
+  font-size: 0.9rem; /* ขนาดตัวอักษร */
+  color: #d1d5db; /* สีเทา */
+  max-width: calc(100% - 2rem); /* ให้คำอธิบายไม่ล้นขอบขวา */
+  z-index: 10;
+  opacity: 0; /* ซ่อนตอนแรก */
+  pointer-events: none; /* ให้ไม่ส่งผลต่อการคลิก */
+  transition: opacity 0.3s ease; /* ทำให้การแสดงผลลื่นไหล */
+}
+
+button:hover + .hover-description {
+  opacity: 1; /* แสดงคำอธิบายเมื่อ hover ปุ่ม */
 }
