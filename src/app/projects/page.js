@@ -2,6 +2,7 @@
 import Layout from "../layout";
 import { useRouter } from "next/navigation"; 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Projects() {
   const router = useRouter();
@@ -32,8 +33,16 @@ export default function Projects() {
         {/* รายการโปรเจค */}
         <div className="space-y-8 w-full max-w-3xl mb-16">
           {[ 
-            { title: "🚀 Project 1", desc: "This project focuses on frontend technologies." },
-            { title: "🌍 Project 2", desc: "This project highlights backend development." }
+            { 
+              title: "🚀 Project 1", 
+              desc: "This project focuses on frontend technologies.",
+              image: "/Acti3.1.jpg" // Add the image path for Project 1
+            },
+            { 
+              title: "🌍 Project 2", 
+              desc: "This project highlights backend development.",
+              image: "/project2-image.jpg" // Add the image path for Project 2
+            }
           ].map((project, index) => (
             <motion.div
               key={index}
@@ -42,6 +51,15 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="p-6 bg-gray-800 rounded-lg shadow-lg"
             >
+              <div className="mb-4">
+                <Image
+                  src={project.image} // Set the image source
+                  alt={project.title}
+                  width={500} // Adjust width as needed
+                  height={300} // Adjust height as needed
+                  className="rounded-lg shadow-lg object-cover"
+                />
+              </div>
               <h3 className="text-2xl font-semibold text-gray-200">{project.title}</h3>
               <p className="text-gray-400 mt-2">{project.desc}</p>
             </motion.div>
