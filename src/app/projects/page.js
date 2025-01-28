@@ -6,7 +6,33 @@ import Image from "next/image";
 
 export default function Projects() {
   const router = useRouter();
-
+  const projects = [
+    { 
+      title: "🚀 Project 1", 
+      link: "https://example.com/project1",
+      desc: "This project explores frontend development.", 
+      image: "/Acti6_SOWN1.jpg"
+    },
+    { 
+      title: "🌍 Project 2", 
+      link: "https://example.com/project2",
+      desc: "This project focuses on backend technologies.", 
+      image: "/project2.jpg"
+    },
+    { 
+      title: "Weblover-toyou", 
+      link: "https://munitsara-kun.github.io/weblover-toyou/",
+      desc: "A Web application that can sent to your bf :]", 
+      image: "/project3.jpg"
+    },
+    { 
+      title: "🛠 Project 4", 
+      link: "https://example.com/project4",
+      desc: "An automation tool for developers.", 
+      image: "/project4.jpg"
+    }
+  ];
+  
   return (
     <Layout>
       <section className="flex flex-col items-center justify-center min-h-screen text-center px-6">
@@ -15,7 +41,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-6xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text leading-tight mb-12"
+          className="text-6xl font-extrabold bg-gradient-to-r from-cyan-400 to-indigo-600 text-transparent bg-clip-text leading-tight mb-12 border-b-4 border-indigo-500 pb-4"
         >
           My Projects
         </motion.h1>
@@ -25,42 +51,34 @@ export default function Projects() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-16"
+          className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-16"
         >
-          Here are some of the projects I have worked on. Each project showcases different skills and technologies I have explored.
+          Explore my projects, each demonstrating different technologies and problem-solving approaches.
         </motion.p>
 
         {/* รายการโปรเจค */}
-        <div className="space-y-8 w-full max-w-3xl mb-16">
-          {[ 
-            { 
-              title: "🚀 Project 1", 
-              desc: "This project focuses on frontend technologies.",
-              image: "/Acti3.1.jpg" // Add the image path for Project 1
-            },
-            { 
-              title: "🌍 Project 2", 
-              desc: "This project highlights backend development.",
-              image: "/project2-image.jpg" // Add the image path for Project 2
-            }
-          ].map((project, index) => (
+        <div className="space-y-8 w-full max-w-4xl mb-16">
+          {projects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="p-6 bg-gray-800 rounded-lg shadow-lg"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="p-6 bg-gray-900 rounded-xl shadow-lg border border-indigo-600 hover:shadow-indigo-500 transition duration-300"
             >
-              <div className="mb-4">
+              <div className="mb-4 relative">
                 <Image
-                  src={project.image} // Set the image source
+                  src={project.image}
                   alt={project.title}
-                  width={500} // Adjust width as needed
-                  height={300} // Adjust height as needed
-                  className="rounded-lg shadow-lg object-cover"
+                  width={600}
+                  height={350}
+                  className="rounded-lg shadow-lg object-cover border border-gray-700"
                 />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-200">{project.title}</h3>
+              <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
+              <p className="text-gray-400 mt-2">
+                <strong>Link:</strong> <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-indigo-400 underline hover:text-indigo-300 transition duration-200">{project.link}</a>
+              </p>
               <p className="text-gray-400 mt-2">{project.desc}</p>
             </motion.div>
           ))}
@@ -69,11 +87,11 @@ export default function Projects() {
         {/* ปุ่มกลับหน้าโฮมแบบ FIXED ที่มุมขวาล่าง */}
         <motion.button
           onClick={() => router.push("/")}
-          className="fixed-home-btn"
+          className="fixed bottom-6 right-6 bg-indigo-600 hover:bg-indigo-500 text-white py-3 px-6 rounded-full shadow-lg shadow-indigo-500 transition-transform transform hover:scale-105"
           whileHover={{
             scale: 1.2,
             rotate: 5,
-            boxShadow: "0 0 25px rgba(255, 255, 255, 0.9)",
+            boxShadow: "0 0 25px rgba(99, 102, 241, 0.8)",
           }}
           whileTap={{ scale: 0.9 }}
         >
