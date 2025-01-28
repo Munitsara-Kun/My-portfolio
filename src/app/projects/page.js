@@ -23,7 +23,7 @@ export default function Projects() {
       title: "Weblover-toyou", 
       link: "https://munitsara-kun.github.io/weblover-toyou/",
       desc: "A Web application that can sent to your bf :]", 
-      image: "/project3.jpg"
+      image: "/weblover-proj.mp4"
     },
     { 
       title: "🛠 Project 4", 
@@ -58,31 +58,42 @@ export default function Projects() {
 
         {/* รายการโปรเจค */}
         <div className="space-y-8 w-full max-w-4xl mb-16">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-6 bg-gray-900 rounded-xl shadow-lg border border-indigo-600 hover:shadow-indigo-500 transition duration-300"
-            >
-              <div className="mb-4 relative">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={600}
-                  height={350}
-                  className="rounded-lg shadow-lg object-cover border border-gray-700"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
-              <p className="text-gray-400 mt-2">
-                <strong>Link:</strong> <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-indigo-400 underline hover:text-indigo-300 transition duration-200">{project.link}</a>
-              </p>
-              <p className="text-gray-400 mt-2">{project.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+  {projects.map((project, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="p-6 bg-gray-900 rounded-xl shadow-lg border border-indigo-600 hover:shadow-indigo-500 transition duration-300"
+    >
+      {project.image.endsWith(".mp4") ? (
+  <video
+    src={project.image}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="rounded-lg shadow-lg object-cover border border-gray-700 video-size"
+  />
+) : (
+  <Image
+    src={project.image}
+    alt={project.title}
+    width={600}
+    height={350}
+    className="rounded-lg shadow-lg object-cover border border-gray-700"
+  />
+)}
+
+      <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
+      <p className="text-gray-400 mt-2">
+        <strong>Link:</strong> <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-indigo-400 underline hover:text-indigo-300 transition duration-200">{project.link}</a>
+      </p>
+      <p className="text-gray-400 mt-2">{project.desc}</p>
+    </motion.div>
+  ))}
+</div>
+
 
         {/* ปุ่มกลับหน้าโฮมแบบ FIXED ที่มุมขวาล่าง */}
         <motion.button

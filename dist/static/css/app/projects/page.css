@@ -745,3 +745,8 @@ button:hover + .hover-description {
   opacity: 1; /* แสดงคำอธิบายเมื่อ hover ปุ่ม */
 }
 
+.video-size {
+  width: 600px;
+  height: 400px;
+}
+
