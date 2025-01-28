@@ -33,7 +33,7 @@ body {
 /* ปรับขนาดของหัวข้อหลัก */
 @layer base {
   h1 {
-    @apply text-8xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text mt-32 z-10;
+    @apply text-7xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text mt-32 z-10;
     line-height: 1.2; /* เพิ่ม line-height */
     padding-bottom: 4px; /* เพิ่มระยะห่างด้านล่าง */
   }
