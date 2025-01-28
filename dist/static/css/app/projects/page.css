@@ -512,12 +512,20 @@ video {
   --tw-gradient-to: #a855f7 var(--tw-gradient-to-position);
   -webkit-background-clip: text;
           background-clip: text;
-  font-size: 6rem;
+  font-size: 4.5rem;
   font-weight: 800;
   color: transparent;
-    line-height: 1.2; /* เพิ่ม line-height */
-    padding-bottom: 4px; /* เพิ่มระยะห่างด้านล่าง */
+    line-height: 1.2;
+    padding-bottom: 4px;
 }
+
+  /* เพิ่ม media query สำหรับขนาดหน้าจอเล็ก */
+  @media (max-width: 768px) {
+    h1 {
+    font-size: 3rem;
+    line-height: 1; /* ลดขนาดข้อความสำหรับมือถือ */
+  }
+  }
 
   h2 {
   margin-bottom: 2rem;
@@ -533,7 +541,12 @@ video {
   font-weight: 700;
   color: transparent;
 }
-
+  @media (max-width: 768px) {
+    h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem; /* ลดขนาดข้อความสำหรับมือถือ */
+  }
+  }
   h3 {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -541,6 +554,12 @@ video {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity, 1));
 }
+  @media (max-width: 768px) {
+    h3 {
+    font-size: 1.875rem;
+    line-height: 2.25rem; /* ลดขนาดข้อความสำหรับมือถือ */
+  }
+  }
 section {
   width: 100%;
 }
@@ -647,7 +666,8 @@ body {
 
 /* ปรับให้ทุก section อยู่กลาง + มี margin และ padding สมดุล */
 
-/* ปรับขนาดของหัวข้อหลัก */
+/* ปรับขนาดหัวข้อใหญ่ให้เล็กลงในมือถือ */
+
 /* global.css */
 img {
   -o-object-fit: cover;

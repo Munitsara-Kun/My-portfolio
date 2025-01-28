@@ -41,16 +41,25 @@ body {
   /* เพิ่ม media query สำหรับขนาดหน้าจอเล็ก */
   @media (max-width: 768px) {
     h1 {
-      @apply text-4xl; /* ลดขนาดข้อความสำหรับมือถือ */
+      @apply text-5xl; /* ลดขนาดข้อความสำหรับมือถือ */
     }
   }
 
   h2 {
     @apply text-4xl font-bold bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text mb-8;
   }
-
+  @media (max-width: 768px) {
+    h2 {
+      @apply text-3xl; /* ลดขนาดข้อความสำหรับมือถือ */
+    }
+  }
   h3 {
     @apply text-4xl font-semibold text-gray-300;
+  }
+  @media (max-width: 768px) {
+    h3 {
+      @apply text-3xl; /* ลดขนาดข้อความสำหรับมือถือ */
+    }
   }
 }
 
