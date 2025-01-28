@@ -30,12 +30,19 @@ body {
   }
 }
 
-/* ปรับขนาดของหัวข้อหลัก */
+/* ปรับขนาดหัวข้อใหญ่ให้เล็กลงในมือถือ */
 @layer base {
   h1 {
     @apply text-7xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text mt-32 z-10;
-    line-height: 1.2; /* เพิ่ม line-height */
-    padding-bottom: 4px; /* เพิ่มระยะห่างด้านล่าง */
+    line-height: 1.2;
+    padding-bottom: 4px;
+  }
+
+  /* เพิ่ม media query สำหรับขนาดหน้าจอเล็ก */
+  @media (max-width: 768px) {
+    h1 {
+      @apply text-4xl; /* ลดขนาดข้อความสำหรับมือถือ */
+    }
   }
 
   h2 {
@@ -46,6 +53,7 @@ body {
     @apply text-4xl font-semibold text-gray-300;
   }
 }
+
 /* global.css */
 img {
   object-fit: cover; /* ปรับให้ภาพไม่ยืด */
