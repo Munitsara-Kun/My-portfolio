@@ -8,16 +8,16 @@ export default function Projects() {
   const router = useRouter();
   const projects = [
     { 
-      title: "🚀 Project 1", 
-      link: "https://example.com/project1",
-      desc: "This project explores frontend development.", 
-      image: "/Acti6_SOWN1.jpg"
+      title: "Abdul's literary Lendings", 
+      link: "https://github.com/paveewuth/CS251_Term_Project.git",
+      desc: "This project involved working as a frontend developer using HTML and CSS. The challenges included tight deadlines and persistent bugs, but ultimately, it was successfully completed with a great team.", 
+      image: "/Proj1.mp4"
     },
     { 
-      title: "🌍 Project 2", 
-      link: "https://example.com/project2",
-      desc: "This project focuses on backend technologies.", 
-      image: "/project2.jpg"
+      title: "Chailai Ticket", 
+      link: "https://www.figma.com/proto/EprZR9i0HxERuroOttmkO4/WebWorkShop?node-id=1-2&t=dpv1qN5tjhPhbv7p-1",
+      desc: "This project focuses on frontend and UI design.", 
+      image: "/Proj2.mp4"
     },
     { 
       title: "Weblover-toyou", 
@@ -26,10 +26,10 @@ export default function Projects() {
       image: "/weblover-proj.mp4"
     },
     { 
-      title: "🛠 Project 4", 
-      link: "https://example.com/project4",
-      desc: "An automation tool for developers.", 
-      image: "/project4.jpg"
+      title: "Blender/Village and floating castle", 
+      link: "-",
+      desc: "It is a graphic design project. By creating work from Blender onto the website.", 
+      image: "/proj4.png"
     }
   ];
   
@@ -86,19 +86,35 @@ export default function Projects() {
 )}
 
       <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
-      <p className="text-gray-400 mt-2">
-        <strong>Link:</strong> <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-indigo-400 underline hover:text-indigo-300 transition duration-200">{project.link}</a>
-      </p>
+      <p className="project-link-container">
+  <strong>Link:</strong> 
+  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+    {project.link}
+  </a>
+</p>
+
       <p className="text-gray-400 mt-2">{project.desc}</p>
     </motion.div>
   ))}
 </div>
 
+{/* ส่วนชี้แจงที่อยู่ด้านล่างสุด */}
+<motion.div
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="mt-56 mb-8 text-gray-300 text-lg max-w-3xl mx-auto text-center"
+>
+  <p>
+    ------Currently adding more projects! Please check back later for more updates as the collection grows:] -------
+  </p>
+</motion.div>
+ 
 
         {/* ปุ่มกลับหน้าโฮมแบบ FIXED ที่มุมขวาล่าง */}
         <motion.button
           onClick={() => router.push("/")}
-          className="fixed bottom-6 right-6 bg-indigo-600 hover:bg-indigo-500 text-white py-3 px-6 rounded-full shadow-lg shadow-indigo-500 transition-transform transform hover:scale-105"
+          className="fixed-scroll-btn right-6 bg-indigo-600 hover:bg-indigo-500 text-white py-2 px-4 rounded-full shadow-lg shadow-indigo-500 transition-transform transform hover:scale-105"
           whileHover={{
             scale: 1.2,
             rotate: 5,
@@ -110,5 +126,9 @@ export default function Projects() {
         </motion.button>
       </section>
     </Layout>
+
+    
   );
+
+  
 }

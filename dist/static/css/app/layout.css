@@ -820,3 +820,22 @@ button:hover + .hover-description {
   height: 400px;
 }
 
+/* กำหนดสไตล์สำหรับลิงก์ */
+.project-link {
+  color: #818cf8; /* สีของลิงก์ (เทียบเท่ากับ text-indigo-400) */
+  text-decoration: underline; /* ขีดเส้นใต้ */
+  transition: color 0.2s ease; /* ทำให้การเปลี่ยนสีเนียน */
+}
+
+.project-link:hover {
+  color: #93c5fd; /* เปลี่ยนสีลิงก์เมื่อ hover (เทียบเท่ากับ text-indigo-300) */
+}
+
+/* กำหนดสไตล์สำหรับข้อความของพารากราฟ */
+.project-link-container {
+  color: #9ca3af; /* สีของข้อความ (เทียบเท่ากับ text-gray-400) */
+  margin-top: 0.5rem; /* ระยะห่างจากด้านบน */
+}
+
+
+

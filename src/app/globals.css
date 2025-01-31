@@ -22,11 +22,13 @@ body {
 
   /* ปุ่ม Home แบบ fixed ไม่ให้ขยับ */
   .fixed-home-btn {
-    @apply fixed bottom-6 right-6 px-6 py-3 flex items-center text-white 
-           bg-gradient-to-r from-blue-600 to-purple-600 rounded-full 
-           font-semibold text-lg border-2 border-transparent 
-           hover:border-blue-500 transition-all duration-300 ease-in-out 
-           transform hover:scale-110 shadow-lg;
+    @apply fixed right-6 bottom-6 px-6 py-3 flex items-center text-white 
+    bg-gradient-to-r from-blue-600 to-purple-600 rounded-full 
+    font-semibold text-lg border-2 border-transparent 
+    hover:border-blue-500 transition-all duration-300 ease-in-out 
+    transform hover:scale-110 shadow-lg;
+
+z-index: 50; /* ทำให้ปุ่มอยู่เหนือ UI อื่นๆ */
   }
 }
 
@@ -128,3 +130,22 @@ button:hover + .hover-description {
   width: 600px;
   height: 400px;
 }
+
+/* กำหนดสไตล์สำหรับลิงก์ */
+.project-link {
+  color: #818cf8; /* สีของลิงก์ (เทียบเท่ากับ text-indigo-400) */
+  text-decoration: underline; /* ขีดเส้นใต้ */
+  transition: color 0.2s ease; /* ทำให้การเปลี่ยนสีเนียน */
+}
+
+.project-link:hover {
+  color: #93c5fd; /* เปลี่ยนสีลิงก์เมื่อ hover (เทียบเท่ากับ text-indigo-300) */
+}
+
+/* กำหนดสไตล์สำหรับข้อความของพารากราฟ */
+.project-link-container {
+  color: #9ca3af; /* สีของข้อความ (เทียบเท่ากับ text-gray-400) */
+  margin-top: 0.5rem; /* ระยะห่างจากด้านบน */
+}
+
+
