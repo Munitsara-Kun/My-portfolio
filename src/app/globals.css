@@ -205,13 +205,16 @@ button:hover + .hover-description {
   }
 
   /* ลดขนาด Area ที่แสดงผลสำหรับมือถือ */
-  .project-link-container,
-  .text-gray-400 {
+  .project-link-container {
+    color: #9ca3af; /* สีของข้อความ */
+    margin-top: 0.5rem; /* ระยะห่างจากด้านบน */
     padding-left: 15px;  /* เพิ่มระยะห่างซ้าย */
     padding-right: 15px; /* เพิ่มระยะห่างขวา */
   }
+  
 
   section {
     @apply px-8; /* เพิ่ม padding ซ้ายขวาใน section เพื่อให้มีขอบในมือถือ */
   }
+  
 }
