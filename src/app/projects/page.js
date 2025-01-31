@@ -122,7 +122,7 @@ export default function Projects() {
           }}
           whileTap={{ scale: 0.9 }}
         >
-          <span className="mr-2">🏠</span> Home
+          <span className="mr-2">🏠</span>
         </motion.button>
       </section>
     </Layout>

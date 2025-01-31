@@ -672,6 +672,12 @@ p {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
+@media (max-width: 768px) {
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem; /* ลดขนาดฟอนต์คำอธิบายลง */
+  }
+}
 button {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   border-radius: 9999px;
@@ -694,6 +700,12 @@ button {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (max-width: 768px) {
+  button {
+    font-size: 1rem;
+    line-height: 1.5rem; /* ลดขนาดฟอนต์คำอธิบายลง */
+  }
 }
 button:hover {
   --tw-rotate: 3deg;
@@ -785,6 +797,13 @@ section, .motion-div {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media (max-width: 768px) {
+  .fixed-scroll-btn {
+    font-size: 1rem;
+    line-height: 1.5rem; /* ลดขนาดฟอนต์คำอธิบายลง */
+  }
+}
+
 .fixed-scroll-btn:hover {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
@@ -838,4 +857,60 @@ button:hover + .hover-description {
 }
 
 
+/* ปรับขนาดภาพและวิดีโอให้เล็กลงในมือถือ */
+@media (max-width: 768px) {
+  .video-size {
+    width: 100%; /* กำหนดให้วิดีโอมีความกว้างเต็มที่ในหน้าจอ */
+    height: auto; /* ความสูงจะปรับตามอัตราส่วน */
+  }
+
+  img {
+    max-width: 100%; /* ขยายขนาดของรูปภาพให้พอดีกับหน้าจอ */
+    height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
+  }
+
+  /* ปรับขนาดฟอนต์ของหัวข้อ */
+  h1 {
+    font-size: 3rem;
+    line-height: 1; /* ลดขนาดฟอนต์หัวข้อใหญ่สำหรับมือถือ */
+  }
+
+  /* ปรับขนาดฟอนต์คำอธิบาย */
+  .text-lg {
+    font-size: 1rem;
+    line-height: 1.5rem; /* ลดขนาดฟอนต์คำอธิบายลง */
+  }
+
+  .project-link-container {
+    font-size: 0.9rem; /* ลดขนาดฟอนต์ของลิงก์ */
+  }
+
+  /* ปรับขนาดฟอนต์ของชื่อโปรเจค */
+  .text-2xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem; /* ลดขนาดฟอนต์ของชื่อโปรเจค */
+  }
+
+  /* ลดระยะห่างของคอนเทนต์ให้พอดีกับขนาดหน้าจอ */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* ปรับขนาดปุ่ม */
+  .fixed-scroll-btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; /* ลดขนาดปุ่มให้เล็กลงสำหรับมือถือ */
+    font-size: 1rem; /* ลดขนาดฟอนต์ของปุ่ม */
+  }
+
+  /* ปรับระยะห่างของข้อความที่ด้านล่างสุด */
+  .motion-div {
+    margin-top: 8rem; /* ลดระยะห่างของข้อความด้านล่าง */
+  }
+}
 
